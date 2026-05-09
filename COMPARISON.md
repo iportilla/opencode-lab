@@ -11,11 +11,41 @@ This document compares two modern AI-assisted development workflows: the GUI-cen
 | **Primary Interface** | Graphical User Interface (IDE)           | Command Line Interface (Terminal/TUI) |
 | **Model Hosting**    | GitHub / OpenAI Managed                  | NVIDIA Cloud Functions / Multi-model  |
 | **Workflow Focus**   | Integrated, "While-You-Type" Assistance | Task-Oriented, Automated Executions   |
-| **Hardware Agnostic**| Yes (Cloud-based)                       | Yes (Cloud-based LLMs)                |
+## 📊 Visualizing the Workflows
+
+### VS Code + Copilot: The "Pair Programmer" Loop
+For junior devs, this feels like having a senior engineer looking over your shoulder.
+
+```mermaid
+graph TD
+    A[Start Coding] --> B{Ghost Text Appears}
+    B -->|Accept| C[Tab key]
+    B -->|Refine| D[Open Chat Cmd+L]
+    C --> E[Run Code]
+    D --> E
+    E --> F{Errors?}
+    F -->|Yes| G[Right-click 'Fix with Copilot']
+    G --> E
+    F -->|No| H[Commit via GUI]
+```
+
+### OpenCode CLI: The "Automation" Loop
+This is perfect if you love the terminal and want to automate the "boring stuff."
+
+```mermaid
+graph LR
+    A[Terminal] --> B[opencode run 'Task']
+    B --> C[AI Generates Files]
+    C --> D[Run & Test]
+    D --> E{Error?}
+    E -->|Yes| F[opencode debug]
+    F --> D
+    E -->|No| G[opencode github 'Push']
+```
 
 ---
 
-## 1. Creating Projects & Code
+## 🛠 1. Creating Projects & Code
 
 ### VS Code + GitHub Copilot
 - **Experience:** Inline autocomplete (Ghost Text) and Chat View (`Cmd+I` or `Cmd+L`).
