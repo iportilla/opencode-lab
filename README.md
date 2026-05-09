@@ -8,10 +8,10 @@ The script uses a recursive approach to calculate the Fibonacci sequence, where 
 
 ## Usage
 
-To run the script, save it as `fibo.py` and execute:
+To run the script, save it as `fibonacci.py` and execute:
 
 ```bash
-python3 fibo.py
+python3 fibonacci.py
 ```
 
 ## Code
@@ -35,9 +35,9 @@ Here's a diagram showing how the function works:
 
 ```mermaid
 graph TD
-    A[n] --> B{Base case?};
-    B --> C[Yes: return n]
-    B --> D[No: calculate fibonacci(n-1) + fibonacci(n-2)]
+    A[n] --> B{Base case?}
+    B -->|Yes| C[Return n]
+    B -->|No| D[Calculate fibonacci]
 ```
 
 ## Target Audience
